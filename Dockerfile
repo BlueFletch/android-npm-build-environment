@@ -1,7 +1,7 @@
 # Android Dockerfile
 # Updated version based on uber/android-build-environment
 
-FROM ubuntu:17.10
+FROM ubuntu:18.04
 
 MAINTAINER Alan Lampa (alan.lampa@bluefletch.com)
 
@@ -35,6 +35,8 @@ RUN dpkg --add-architecture i386 && apt-get update -yqq && apt-get install -y \
   unzip \
   vim \
   python2.7 \
+  nodejs \
+  npm \
   sudo \
   && apt-get clean
 
@@ -49,11 +51,6 @@ RUN ln -s /usr/bin/python2.7 /usr/bin/python
 # Clean Up Apt-get
 #RUN rm -rf /var/lib/apt/lists/*
 #RUN apt-get clean
-
-# Install NodeJS and NPM
-RUN apt-get update
-RUN apt-get -y install nodejs
-RUN apt-get -y install npm
 
 # Install Android SDK tools
 RUN mkdir -p /usr/local/android-sdk
