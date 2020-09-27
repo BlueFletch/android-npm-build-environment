@@ -34,7 +34,6 @@ RUN dpkg --add-architecture i386 && apt-get update -yqq && apt-get install -y \
   wget \
   unzip \
   vim \
-  python2.7 \
   nodejs \
   npm \
   sudo \
