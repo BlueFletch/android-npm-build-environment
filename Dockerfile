@@ -39,8 +39,13 @@ RUN dpkg --add-architecture i386 && apt-get update -yqq && apt-get install -y \
   sudo \
   && apt-get clean
 
+## print out what i'm using
+RUN python -V
+RUN node -v
+RUN npm -v
+
 # create a link to python
-RUN ln -s /usr/bin/python2.7 /usr/bin/python
+#RUN ln -s /usr/bin/python2.7 /usr/bin/python
 
 # Install Java
 #RUN apt-add-repository ppa:openjdk-r/ppa
